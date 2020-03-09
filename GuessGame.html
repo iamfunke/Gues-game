@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+  let  human_Score = 0, computer_Score = 0 ;
+    function guessGame(){
+      let firstdice = Math.floor(Math.random()*6)+1 ;
+      let  seconddice = Math.floor(Math.random()*6)+1 ;
+      let  firstGuess = f1.g1.value ;
+      let  secondGuess = f1.g2.value ;
+        if(firstGuess==firstdice && secondGuess==seconddice){
+        human_Score+=1;
+        f1.human_Screen.value = human_Score ;
+        f1.computer_Screen.value = computer_Score ;
+    }
+    else if (firstGuess<=secondGuess){
+       human_Score+=1
+       f1.human_Screen.value = human_Score ;
+        f1.computer_Screen.value = computer_Score ;
+    }
+    else{
+        computer_Score+=1;
+        f1.computer_Screen.value = computer_Score;
+        f1.human_Screen.value = human_Score;
+    }
+
+    }
+    </script>
+</head>
+<body>
+    <form name="f1">
+        <table align="center">
+            <tr>
+                <td>Guess First Number</td>
+                <td><input type="text" placeholder="guess a number from 1-6" name="g1"></td>
+            </tr>
+            <tr>
+                <td>Guess Second Number</td>
+                <td><input type="text" placeholder="guess a number from 1-6" name="g2"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="Guess" onclick="guessGame()"></td>
+            </tr>
+            <tr>
+                <td>Human Score</td>
+                <td><input type="text" disabled name="human_Screen"></td>
+            </tr>
+            <tr>
+                <td>Computer Score</td>
+                <td><input type="text" disabled name="computer_Screen"></td>
+            </tr>
+        </table >
+    </form>
+</body>
+</html>
